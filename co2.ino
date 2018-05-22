@@ -66,9 +66,9 @@ void loop()
   percentage = MGGetPercentage(analogValue);
 
   if (percentage < 400 ) {
-    ColorfulLED(0, 255, 0);
-  } else {
     ColorfulLED(255, 0, 0);
+  } else {
+    ColorfulLED(0, 0, 255);
   }
 
   if (DisplayMode == 1) {
