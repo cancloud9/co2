@@ -1,14 +1,17 @@
 #define lightSensor A0
-
+#define co2Sensor A1
 void setup()
 {
   pinMode (lightSensor, INPUT);
+  pinMode(co2Sensor,INPUT);
   Serial.begin(9600);
 }
 
 void loop()
 {
-  Serial.println(filterFirstOrderDelay());
+  Serial.print(filterFirstOrderDelay());
+  Serial.print(", ");
+  Serial.println(filterAvg(100));
   delay(100);
 }
 
@@ -17,7 +20,7 @@ int filterAvg(int K)
   int data=0;
   for (int i=0;i<K;i++)
   {
-    data+=analogRead(lightSensor);
+    data+=analogRead(co2Sensor);
   }
   return data/K;
 }
