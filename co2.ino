@@ -12,7 +12,7 @@ void loop()
   Serial.print(filterFirstOrderDelay());
   Serial.print(", ");
   Serial.println(filterAvg(100));
-  delay(100);
+  delay(1000);
 }
 
 int filterAvg(int K)
